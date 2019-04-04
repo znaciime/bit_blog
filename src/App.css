@@ -1,33 +1,37 @@
-.App {
+.top{
+  background-color: deepskyblue;
+  color: azure;
+}
+.bottom{
+  background-color: deepskyblue;
+}
+.topright a{
+  color: azure;
+  margin-left: 4%;
+  
+}
+.Main{
+  text-align: center;
+  font-size: 1.5em;
+
+}
+.Main:hover{
+  background-color: silver;
+  
+} 
+.about{
   text-align: center;
 }
+.howerauthor:hover{
+  background-color: burlywood;
+  width: 150px;
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+  border-radius: 30%;
+
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.howerauthor{
+  height: 50px;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.singlepost{
+  font-size: 1.5em;
 }
