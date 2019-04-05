@@ -9,9 +9,9 @@ class Header extends React.Component {
 
     render() {
         return (
-            <div className="container">
-                <div className="row top">
-                    <div className="col-6">BIT BLOG</div>
+            <div className="container top">
+                <div className="row">
+                    <div className="col-6"><h5>BIT BLOG</h5></div>
                     <div className="col-6 topright">
                         <Link to="/SubmitPage"><b>Create Post</b></Link>
                         <Link to="/" ><b>Home</b></Link>

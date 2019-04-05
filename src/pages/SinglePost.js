@@ -47,7 +47,7 @@ class SinglePost extends React.Component {
     render() {
 
         return (
-            <>
+            <div className="container">
 
                 <div className="row singlepost" >
                     <div className="col-2"></div>
@@ -61,7 +61,7 @@ class SinglePost extends React.Component {
                 </div >
                 <div className="row">
                     <div className="col-12">
-                        <p>{this.state.morePosts.length} more posts from this author</p>
+                        <p><b>{this.state.morePosts.length} more posts from this author</b></p>
                         {this.state.morePosts.map((element) => {
                             return <p><Link to={`/SinglePost/${element.id}`}>Title: {element.title}</Link></p>
 
@@ -70,7 +70,7 @@ class SinglePost extends React.Component {
                     </div>
                 </div>
 
-            </>
+            </div>
         )
     }
 }

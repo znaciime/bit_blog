@@ -27,7 +27,7 @@ export const fetchAuthors = () => {
         .then((response) => response.json())
         .then((apiUsers) => {
             return apiUsers.map((element) => {
-                return new Author(element.id, element.name, element.email, element.address.street, element.address.city, element.website, element.company.name);
+                return new Author(element.id, element.name, element.email, element.address.street, element.address.city, element.website, element.company.name, element.address.geo.lat, element.address.geo.lng);
             })
         });
 }
@@ -36,7 +36,7 @@ export const fetchOneAuthor = (id) => {
         .then((response) => response.json())
         .then((apiUser) => {
             console.log(apiUser)
-            return new Author(apiUser.id, apiUser.name, apiUser.email, apiUser.address.street, apiUser.address.city, apiUser.website, apiUser.company.name)
+            return new Author(apiUser.id, apiUser.name, apiUser.email, apiUser.address.street, apiUser.address.city, apiUser.website, apiUser.company.name, apiUser.address.geo.lat, apiUser.address.geo.lng)
 
         })
 
@@ -52,18 +52,17 @@ export const fetchPostperAuthor = (user) => {
 
         });
 }
-export const sendData = (SubmitPage) => fetch('https://jsonplaceholder.typicode.com/posts', {
+export const sendData = (inputTitle, inputPost) => fetch('https://jsonplaceholder.typicode.com/posts', {
     method: 'POST',
     body: JSON.stringify({
-        title: "",
-        body: "",
-        userId: 1
+        title: inputTitle,
+        body: inputPost,
+        userId: 99
     }),
     headers: {
         "Content-type": "application/json; charset=UTF-8"
     }
 })
     .then(response => response.json())
-    .then(json => console.log(json))
 
 

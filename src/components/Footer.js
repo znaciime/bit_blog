@@ -9,9 +9,10 @@ class Footer extends React.Component {
     render() {
 
         return (
-            <div className="row bottom">
+            <div className="container"> <div className="row bottom">
                 <div className="col-12">Copyright (c) BIT 2019</div>
-            </div>
+            </div></div>
+
 
         )
     }

@@ -33,11 +33,18 @@ class PostList extends React.Component {
             return (
 
 
-                <div className="Main" key={element.id}>
-                    <p>id: {element.id}</p>
-                    <Link to={`/SinglePost/${element.id}`}>Title: {element.title}</Link>
-                    <hr />
+                <div className="row">
+                    <div className="col-2"></div>
+                    <div className="col-8"> <div className="Main back" key={element.id}>
+                        <p>id: {element.id}</p>
+                        <Link to={`/SinglePost/${element.id}`}>Title: {element.title}</Link>
+                        <hr />
+                    </div></div>
+                    <div className="col-2"></div>
+
                 </div>
+
+
 
             )
         })
