@@ -13,6 +13,7 @@ class Header extends React.Component {
                 <div className="row top">
                     <div className="col-6">BIT BLOG</div>
                     <div className="col-6 topright">
+                        <Link to="/SubmitPage"><b>Create Post</b></Link>
                         <Link to="/" ><b>Home</b></Link>
                         <Link to="/Authors" ><b>Authors</b></Link>
                         <Link to="/About" ><b>About</b></Link>

@@ -25,6 +25,8 @@ class PostList extends React.Component {
     }
 
 
+
+
     render() {
         const renderedPosts = this.state.postList.map((element) => {
 

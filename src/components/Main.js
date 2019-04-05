@@ -5,7 +5,9 @@ import { Switch, Route } from 'react-router-dom';
 import SinglePost from '../pages/SinglePost';
 import About from './About';
 import Authors from '../pages/Authors'
-import SingleAuthor from '../pages/SingleAuthor'
+import SingleAuthor from '../pages/SingleAuthor';
+import SubmitPage from '../pages/SubmitPage';
+
 
 
 class Main extends React.Component {
@@ -18,20 +20,18 @@ class Main extends React.Component {
     render() {
         return (
             <>
-                <div className="container">
-                    <div className="row">
-                        <div className="col-10">
 
-                            <Switch>
-                                <Route path='/SingleAuthor/:numberz' component={SingleAuthor} />
-                                <Route path='/Authors' component={Authors} />
-                                <Route path='/About' component={About} />
-                                <Route path='/SinglePost/:broj' component={SinglePost} />
-                                <Route exact path='/' component={PostList} />
-                            </Switch>
-                        </div>
-                    </div>
-                </div>
+
+                <Switch>
+
+                    <Route path='/SingleAuthor/:numberz' component={SingleAuthor} />
+                    <Route path='/Authors' component={Authors} />
+                    <Route path='/About' component={About} />
+                    <Route path='/SinglePost/:postId' component={SinglePost} />
+                    <Route path='/SubmitPage/' component={SubmitPage} />
+                    <Route exact path='/' component={PostList} />
+                </Switch>
+
             </>)
     }
 

@@ -1,10 +1,13 @@
 import { Post } from "../entities/Post";
-import { Author } from "../entities/Author"
+import { Author } from "../entities/Author";
+import SubmitPage from '../pages/SubmitPage'
+
 
 export const fetchPost = (id) => {
     return fetch('https://jsonplaceholder.typicode.com/posts/' + id)
         .then((response) => response.json())
         .then((apiPost) => {
+            console.log(apiPost)
             const { id, title, body, userId } = apiPost;
             return new Post(id, title, body, userId);
         });
@@ -32,9 +35,35 @@ export const fetchOneAuthor = (id) => {
     return fetch('https://jsonplaceholder.typicode.com/users/' + id)
         .then((response) => response.json())
         .then((apiUser) => {
-
+            console.log(apiUser)
             return new Author(apiUser.id, apiUser.name, apiUser.email, apiUser.address.street, apiUser.address.city, apiUser.website, apiUser.company.name)
 
         })
 
 }
+export const fetchPostperAuthor = (user) => {
+    return fetch('https://jsonplaceholder.typicode.com/posts?userId=' + user)
+        .then((response) => response.json())
+        .then((apiPost) => {
+            console.log(apiPost)
+            return apiPost.map((element) => {
+                return new Post(element.id, element.title, element.body, element.userId);
+            })
+
+        });
+}
+export const sendData = (SubmitPage) => fetch('https://jsonplaceholder.typicode.com/posts', {
+    method: 'POST',
+    body: JSON.stringify({
+        title: "",
+        body: "",
+        userId: 1
+    }),
+    headers: {
+        "Content-type": "application/json; charset=UTF-8"
+    }
+})
+    .then(response => response.json())
+    .then(json => console.log(json))
+
+
