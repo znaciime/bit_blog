@@ -27,7 +27,7 @@ export const fetchAuthors = () => {
         .then((response) => response.json())
         .then((apiUsers) => {
             return apiUsers.map((element) => {
-                return new Author(element.id, element.name, element.email, element.address.street, element.address.city, element.website, element.company.name, element.address.geo.lat, element.address.geo.lng);
+                return new Author(element.id, element.name, element.email, element.address.street, element.address.city, element.website, element.company.name, element.address.zipcode, element.address.geo.lat, element.address.geo.lng);
             })
         });
 }
@@ -36,7 +36,7 @@ export const fetchOneAuthor = (id) => {
         .then((response) => response.json())
         .then((apiUser) => {
             console.log(apiUser)
-            return new Author(apiUser.id, apiUser.name, apiUser.email, apiUser.address.street, apiUser.address.city, apiUser.website, apiUser.company.name, apiUser.address.geo.lat, apiUser.address.geo.lng)
+            return new Author(apiUser.id, apiUser.name, apiUser.email, apiUser.address.street, apiUser.address.city, apiUser.website, apiUser.company.name, apiUser.address.zipcode, apiUser.address.geo.lat, apiUser.address.geo.lng)
 
         })
 

@@ -1,5 +1,5 @@
 export class Author {
-    constructor(id, name, email, street, city, website, company, geolat, geolng) {
+    constructor(id, name, email, street, city, website, company, zipcode, geolat, geolng) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -7,6 +7,7 @@ export class Author {
         this.city = city;
         this.website = website;
         this.company = company;
+        this.zipcode = zipcode;
         this.geolat = geolat;
         this.geolng = geolng;
 

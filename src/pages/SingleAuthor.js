@@ -25,7 +25,7 @@ class SingleAuthor extends React.Component {
 
         return (
             <>
-                <div className="container">
+                <div className="container ">
                     <div className="row">
                         <div className="col-4"><p>Author Name:</p>
                             <p>Email:</p></div>
@@ -37,16 +37,16 @@ class SingleAuthor extends React.Component {
                     </div>
                     <hr />
                     <div className="row">
-                        <div className="col-4"> <h4>Adress</h4>
-                            <p>Street:</p>
-                            <p>City:</p></div>
-                        <div className="col-4">
+                        <div className="col-3"> <h4>Adress</h4>
+                            <p>Street: {this.state.OneAuthor.street}</p>
+                            <p>City: {this.state.OneAuthor.city}</p></div>
+                        <div className="col-3">
                             <p></p>
-                            <p>{this.state.OneAuthor.street}</p>
-                            <p>{this.state.OneAuthor.city}</p>
+                            <p></p>
+                            <p></p>
                         </div>
-                        <div className="col-4">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d11322.276626337698!2d20.4580218!3d44.8099684!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2srs!4v1554472128173!5m2!1sen!2srs" width="400" height="300" frameBorder="0" style={{ border: "0" }} allowFullScreen></iframe>
+                        <div className="col-6">
+                            <iframe src={`https://www.google.com/maps?q=` + `${this.state.OneAuthor.geolat}` + `,` + `${this.state.OneAuthor.geolng}` + `&output=embed`} width="400" height="300" frameBorder="0" style={{ border: "0" }} allowFullScreen></iframe>
                         </div>
 
 
@@ -54,7 +54,9 @@ class SingleAuthor extends React.Component {
                     <hr />
                     <div className="row">
                         <div className="col-4"><h5>Company:</h5></div>
-                        <div className="col-8"><p>{this.state.OneAuthor.company}</p></div>
+                        <div className="col-8"><p>{this.state.OneAuthor.company}</p>
+                            <p>Zipcode:{this.state.OneAuthor.zipcode}</p>
+                        </div>
 
                     </div>
 
